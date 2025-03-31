@@ -1,17 +1,14 @@
-package dev.discord_server.channel.entity;
+package dev.discord_server.domain.channel.entity;
 
-import dev.discord_server.channelUser.entity.ChannelUser;
 import dev.discord_server.config.BaseEntity;
-import dev.discord_server.message.entity.Message;
-import dev.discord_server.server.entity.Server;
+import dev.discord_server.domain.message.entity.Message;
+import dev.discord_server.domain.server.entity.Server;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -37,8 +34,6 @@ public class Channel extends BaseEntity {
     @Column(name = "type", nullable = false)
     private String type;
 
-    @OneToMany(mappedBy = "channel")
-    private Set<ChannelUser> channelUsers = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "channel")
     private Set<Message> messages = new LinkedHashSet<>();

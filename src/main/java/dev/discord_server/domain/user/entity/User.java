@@ -1,17 +1,14 @@
-package dev.discord_server.user.entity;
+package dev.discord_server.domain.user.entity;
 
-import dev.discord_server.channelUser.entity.ChannelUser;
 import dev.discord_server.config.BaseEntity;
-import dev.discord_server.friend.entity.Friend;
-import dev.discord_server.message.entity.Message;
-import dev.discord_server.serverUser.entity.ServerUser;
-import dev.discord_server.user.Enum.Role;
+import dev.discord_server.domain.friend.entity.Friend;
+import dev.discord_server.domain.message.entity.Message;
+import dev.discord_server.domain.serverUser.entity.ServerUser;
+import dev.discord_server.domain.user.Enum.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 
-import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -41,8 +38,6 @@ public class User extends BaseEntity {
     private Role role;
 
 
-    @OneToMany(mappedBy = "user")
-    private Set<ChannelUser> channelUsers = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "fromUser")
     private Set<Friend> to_friends = new LinkedHashSet<>();

@@ -1,16 +1,13 @@
-package dev.discord_server.message.entity;
+package dev.discord_server.domain.message.entity;
 
-import dev.discord_server.channel.entity.Channel;
+import dev.discord_server.domain.channel.entity.Channel;
 import dev.discord_server.config.BaseEntity;
-import dev.discord_server.user.entity.User;
+import dev.discord_server.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
-import java.time.Instant;
 
 @Getter
 @Setter

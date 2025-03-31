@@ -1,13 +1,11 @@
-package dev.discord_server.friend.entity;
+package dev.discord_server.domain.friend.entity;
 
 import dev.discord_server.config.BaseEntity;
-import dev.discord_server.user.entity.User;
+import dev.discord_server.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
-
-import java.time.Instant;
 
 @Getter
 @Setter
